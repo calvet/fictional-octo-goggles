@@ -933,9 +933,9 @@
         iti = window.intlTelInput(phoneInput, {
             initialCountry: "auto",
             geoIpLookup: (success, failure) => {
-                fetch("http://ip-api.com/json/")
+                fetch("https://api.country.is/")
                     .then((res) => res.json())
-                    .then((data) => success(data.countryCode))
+                    .then((data) => success(data.country))
                     .catch(() => failure());
             },
             autoPlaceholder: "aggressive",
